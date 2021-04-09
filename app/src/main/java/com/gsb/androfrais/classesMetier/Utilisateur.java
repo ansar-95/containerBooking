@@ -1,5 +1,7 @@
 package com.gsb.androfrais.classesMetier;
 
+import org.json.JSONObject;
+
 public class Utilisateur {
 
     private int numUtilisateur;
@@ -28,4 +30,16 @@ public class Utilisateur {
     public String getClient() {
         return client;
     }
+
+
+    public Utilisateur(JSONObject jsonObject) {
+
+        numUtilisateur = jsonObject.optInt("numUtilisateur");
+        raisonSocial = jsonObject.optString("raisonSocial");
+        login = jsonObject.optString("login");
+        motDePasse = jsonObject.optString("motDePasse");
+        client = jsonObject.optString("client");
+    }
+
+
 }

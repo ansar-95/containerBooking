@@ -23,9 +23,9 @@ public class BlocAdapter extends ArrayAdapter<Bloc> {
     }
 
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Bloc ficheFrais = getItem(position);
+        Bloc ficheBloc = getItem(position);
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_consulter_reservation, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_bloc, parent, false);
         }
         if (position % 2 == 0) {
             convertView.setBackgroundColor(Color.GREEN);
@@ -34,7 +34,7 @@ public class BlocAdapter extends ArrayAdapter<Bloc> {
         }
 
         TextView codeBloc = (TextView) convertView.findViewById(R.id.codeBloc);
-
+        codeBloc.setText(ficheBloc.getCodeBloc());
 
         return convertView;
 
