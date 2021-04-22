@@ -12,39 +12,26 @@ import java.util.ArrayList;
 
 public class Travee {
 
-    public int numTravee;
-    private ArrayList<Bloc> listeBloc;
+    private int numTravee;
+    private Bloc bloc;
 
-
-    public ArrayList<Bloc> getListeBloc() {
-        return listeBloc;
-    }
 
     public int getNumTravee() {
         return numTravee;
     }
 
+    public Bloc getBloc() {
+        return bloc;
+    }
+
+
 
     public Travee(JSONObject jsonObject) {
 
         try {
-            JSONArray collectionTravees = jsonObject.getJSONArray("Travees");
 
-            for (int i = 0; i < collectionTravees.length(); i++) {
-                JSONObject ligne = null;
-                try {
-                    ligne = collectionTravees.getJSONObject(i);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-                if(i == 0){
-                    numTravee = ligne.optInt("numTravee");
-                }
-
-                listeBloc.add(new Bloc(ligne));
-            }
+            numTravee = jsonObject.getInt("Numtravee");
+            bloc = new Bloc(jsonObject);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -53,5 +40,15 @@ public class Travee {
     }
 
 
-
+    public static ArrayList<Travee> jsonToArrayListObject(JSONArray jsonArray){
+        ArrayList<Travee> collectionTravee = new ArrayList<Travee>();
+        for (int i = 0; i < jsonArray.length(); i++) {
+            try {
+                collectionTravee.add(new Travee(jsonArray.getJSONObject(i)));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return collectionTravee;
+    }
 }

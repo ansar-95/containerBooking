@@ -34,11 +34,8 @@ public class Utilisateur {
 
     public Utilisateur(JSONObject jsonObject) {
 
-        numUtilisateur = jsonObject.optInt("numUtilisateur");
-        raisonSocial = jsonObject.optString("raisonSocial");
-        login = jsonObject.optString("login");
-        motDePasse = jsonObject.optString("motDePasse");
-        client = jsonObject.optString("client");
+        numUtilisateur = jsonObject.optInt("Numclient");
+
     }
 
 

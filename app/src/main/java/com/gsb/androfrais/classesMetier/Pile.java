@@ -8,16 +8,16 @@ import java.util.ArrayList;
 
 public class Pile {
 
-    private int numPile;
-    private ArrayList<Travee> listeTravee;
+    private Integer numPile;
+    private Travee travee;
     private int capacite;
 
     public int getNumPile() {
         return numPile;
     }
 
-    public ArrayList<Travee> getListeTravee() {
-        return listeTravee;
+    public Travee getTravee() {
+        return travee;
     }
 
     public int getCapacite() {
@@ -27,30 +27,30 @@ public class Pile {
     public Pile(JSONObject jsonObject)
     {
         try {
-            JSONArray collectionTravees = jsonObject.getJSONArray("Travees");
-
-            for (int i = 0; i < collectionTravees.length(); i++) {
-                JSONObject ligne = null;
-                try {
-                    ligne = collectionTravees.getJSONObject(i);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-                if(i == 0){
-                    numTravee = ligne.optInt("numTravee");
-                }
-
-                listeBloc.add(new Bloc(ligne));
-            }
+            numPile = jsonObject.getInt("NumPile");
+            travee = new Travee(jsonObject);
+            capacite = jsonObject.getInt("capacite");
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
     }
 
+    public static ArrayList<Pile> jsonToArrayListObject(JSONArray jsonArray){
+        ArrayList<Pile> collectionPile = new ArrayList<Pile>();
+        for (int i = 0; i < jsonArray.length(); i++) {
+            try {
+                collectionPile.add(new Pile(jsonArray.getJSONObject(i)));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return collectionPile;
     }
+
+
+
+
+
 
 }

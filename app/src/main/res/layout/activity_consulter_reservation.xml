@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ConsulterReservation">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -15,23 +15,53 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="22dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/listeBloc"
+        app:layout_constraintBottom_toTopOf="@+id/listeReservation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/test"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="idReservation" />
 
         <TextView
-            android:id="@+id/codeBloc"
             android:layout_width="100dp"
-            android:layout_height="50dp"
-            />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="dateReservation" />
 
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="datePrevueStockage" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="nbJoursStockagePrevu" />
+
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="quantite" />
+
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="etat" />
     </LinearLayout>
 
-
     <ListView
-        android:id="@+id/listeBloc"
+        android:id="@+id/listeReservation"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -42,7 +72,4 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header" />
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:text="id Reservation : " />
+
+    <TextView
+        android:id="@+id/idReservation"
+        android:layout_width="99dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:padding="0dp" />
+
+    <TextView
+
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="date Preveu: "
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        />
+
+
+    <TextView
+        android:id="@+id/datePrevueStockage"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:padding="0dp"/>
+
+    <TextView
+
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="date reservation: "
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        />
+
+    <TextView
+        android:id="@+id/dateReservation"
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:padding="0dp" />
+
+    <TextView
+
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="nbJoours: "
+        android:layout_margin="0dp"
+        android:padding="0dp"/>
+
+    <TextView
+        android:id="@+id/nbJoursStockagePrevu"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:padding="0dp" />
+
+
+    <TextView
+
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="quantite: "
+        android:layout_margin="0dp"
+        android:padding="0dp"/>
+
+    <TextView
+        android:id="@+id/quantite"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        />
+
+    <TextView
+
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="etat: "
+        android:layout_margin="0dp"
+        android:padding="0dp"/>
+    <TextView
+        android:id="@+id/etat"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        />
+</LinearLayout>

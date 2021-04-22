@@ -19,6 +19,8 @@ public class Bloc {
     public Bloc(JSONObject jsonObject){
         try {
             codeBloc = jsonObject.getString("Codebloc");
+
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
