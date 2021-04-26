@@ -1,18 +1,19 @@
 package com.gsb.androfrais.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.gsb.androfrais.R;
+import com.gsb.androfrais.ReservationDetailActivity;
 import com.gsb.androfrais.classesMetier.Reservation;
 
 import java.text.DateFormat;
@@ -34,11 +35,7 @@ public class ReservationAdapter extends ArrayAdapter<Reservation> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_reservation, parent, false);
         }
 
-        if (position % 2 == 0) {
-            convertView.setBackgroundColor(Color.GREEN);
-        } else {
-            convertView.setBackgroundColor(Color.MAGENTA);
-        }
+
 
         TextView tvid = (TextView) convertView.findViewById(R.id.idReservation);
         TextView tvdateReservation = (TextView) convertView.findViewById(R.id.dateReservation);
@@ -54,17 +51,20 @@ public class ReservationAdapter extends ArrayAdapter<Reservation> {
         String datePrevueStockage = dateFormat.format(reservation.getDatePrevueStockage());
         String nbJours = Integer.toString(reservation.getNbJoursStockagePrevue());
         String quantite = Integer.toString(reservation.getQuantite());
-        tvid.setText(idReservation);
-        tvdateReservation.setText(dateReservation);
-        tvdatePrevueStockage.setText(datePrevueStockage);
-        tvnbJoursStockagePrevu.setText(nbJours);
-        tvquantite.setText(quantite);
-        tvetat.setText(reservation.getEtat());
+
+        tvid.setText("Id Reservation : " + idReservation);
+        tvdateReservation.setText("Date de Reservation : " + dateReservation);
+        tvdatePrevueStockage.setText("Date début de stockage : " + datePrevueStockage);
+//        tvnbJoursStockagePrevu.setText(nbJours);
+//        tvquantite.setText(quantite);
+//        tvetat.setText(reservation.getEtat());
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), reservation.getEtat(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), ReservationDetailActivity.class);
+                intent.putExtra("idReservation", idReservation);
+                getContext().startActivity(intent);
             }
         });
 

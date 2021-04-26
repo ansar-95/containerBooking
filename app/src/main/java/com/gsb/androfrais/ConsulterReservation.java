@@ -48,7 +48,7 @@ public class ConsulterReservation extends AppCompatActivity {
 
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         StringRequest sr = new StringRequest(Request.Method.GET,
-                "http://ws-stockage.portdebarcelona.cat/api/reservation",
+                "https://217.167.171.231/ws-zstockage/public/index.php/api/reservation",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -56,8 +56,8 @@ public class ConsulterReservation extends AppCompatActivity {
                         try {
 
                              jsonObject = new JSONObject(response);
-                            collectionReservation.addAll(Reservation.jsonToArrayListObject(jsonObject.getJSONArray("Reservations")));
-                            adapter.addAll(collectionReservation);
+                            adapter.addAll(Reservation.jsonToArrayListObject(jsonObject.getJSONArray("Reservations")));
+
 
 
                         } catch (JSONException e) {

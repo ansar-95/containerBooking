@@ -53,7 +53,7 @@ public class Reservation {
     public Reservation (JSONObject jsonObject)
     {
         try {
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd");
             id = jsonObject.getInt("Id");
 
             try {

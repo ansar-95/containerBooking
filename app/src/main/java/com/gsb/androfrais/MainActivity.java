@@ -16,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.gsb.androfrais.classesMetier.NukeSSLCerts;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
+        new NukeSSLCerts().nuke();
     }
 
     public void authentification(View aView) {
@@ -51,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         final String password = editTextPassword.getText().toString();
 
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url = "http://ws-stockage.portdebarcelona.cat/api/login";
+        String url = "https://217.167.171.231/ws-zstockage/public/index.php/api/login";
         StringRequest sr = new StringRequest( //début de l’initialisation
                 Request.Method.POST,
                 url,
